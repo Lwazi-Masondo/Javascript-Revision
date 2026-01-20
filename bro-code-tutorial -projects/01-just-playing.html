@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" />
+    <br /><br />
+    <button id="button">Submit</button>
+
+    <p id="displayName"></p>
+    <script>
+      function userName() {
+        let person = document.getElementById("username").value;
+        document.getElementById(
+          "displayName"
+        ).textContent = `Hey ${person} how are you?`;
+
+        if (person === "") {
+          alert("No value");
+        }
+      }
+
+      document.getElementById("button").onclick = userName;
+    </script>
+  </body>
+</html>
