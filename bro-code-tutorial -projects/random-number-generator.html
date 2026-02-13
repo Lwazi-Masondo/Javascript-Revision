@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Number Generator</title>
+    <style>
+      button {
+        display: block;
+        margin: auto;
+        margin-top: 60px;
+        padding: 10px;
+        font-size: 2em;
+        background-color: aliceblue;
+        cursor: pointer;
+      }
+
+      label {
+        color: blue;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 4em;
+      }
+    </style>
+  </head>
+  <body>
+    <label id="diceNum"></label>
+    <button id="diceRoller">Roll</button>
+    <script>
+      const diceNum = document.getElementById("diceNum");
+      const diceRoller = document.getElementById("diceRoller");
+
+      let min = 1;
+      let max = 6;
+
+      let randomNum;
+
+      diceRoller.onclick = function () {
+        randomNum = Math.floor(Math.random() * max) + min;
+        diceNum.textContent = randomNum;
+      };
+    </script>
+  </body>
+</html>
