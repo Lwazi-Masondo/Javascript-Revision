@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>If Statements and Conditions Practice</title>
+    <style>
+      section {
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        font-size: 2em;
+      }
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <label for="">How old are you?</label>
+      <br />
+      <input type="text" id="myText" />
+      <br />
+      <input type="submit" id="ageSubmit" />
+      <br />
+      <p id="result"></p>
+    </section>
+
+    <script>
+      const myText = document.getElementById("myText");
+      const ageSubmit = document.getElementById("ageSubmit");
+      const result = document.getElementById("result");
+      let age;
+
+      ageSubmit.onclick = function () {
+        age = myText.value;
+        age = Number(age);
+
+        if (age >= 100) {
+          result.textContent = `You are too old!`;
+        } else if (age >= 18) {
+          result.textContent = `You are old enough!`;
+        } else if (age <= 0) {
+          result.textContent = `You havent been born yet!`;
+        } else {
+          result.textContent = `You need to be 18+`;
+        }
+      };
+    </script>
+  </body>
+</html>
