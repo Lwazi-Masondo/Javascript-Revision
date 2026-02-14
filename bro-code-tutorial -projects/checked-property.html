@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checked Property</title>
+  </head>
+  <body>
+    <br />
+    <input type="checkbox" id="subBtn" />
+    <label for="subBtn">Subscribe</label>
+    <br />
+    <p>Select Payment option:</p>
+    <input type="radio" name="payOpt" id="capBank" />
+    <label for="capBank">Capitec</label>
+    <br />
+    <input type="radio" name="payOpt" id="nedBank" />
+    <label for="nedBank">Nedbank</label>
+    <br />
+    <input type="radio" name="payOpt" id="absBank" />
+    <label for="absBank">Absa</label>
+    <br />
+    <br />
+    <button type="submit" id="sBtn">Submit</button>
+    <br /><br />
+    <p id="subResult"></p>
+    <p id="payResult"></p>
+
+    <script>
+      const subBtn = document.getElementById("subBtn");
+      const capBank = document.getElementById("capBank");
+      const nedBank = document.getElementById("nedBank");
+      const absBank = document.getElementById("absBank");
+      const sBtn = document.getElementById("sBtn");
+      const subResult = document.getElementById("subResult");
+      const payResult = document.getElementById("payResult");
+      const payOpt = document.getElementsByName("payOpt");
+
+      sBtn.onclick = function () {
+        if (subBtn.checked) {
+          subResult.textContent = `You have been subscribed`;
+        } else {
+          subResult.textContent = `You are NOT yet subscribed!`;
+        }
+
+        if (capBank.checked) {
+          payResult.textContent = `Capitec Payment selected successfully`;
+        } else if (nedBank.checked) {
+          payResult.textContent = `Nedbank Payment selected successfully`;
+        } else if (absBank.checked) {
+          payResult.textContent = `ABSA Payment selected successfully`;
+        } else {
+          payResult.textContent = `You need to select a payment option`;
+        }
+      };
+    </script>
+  </body>
+</html>
